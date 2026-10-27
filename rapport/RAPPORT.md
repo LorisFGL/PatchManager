@@ -1,7 +1,7 @@
 ---
 title: "Projet : Système de gestion des mises à jour en PowerShell"
 subtitle: "Patch Management Windows — Sécurité des systèmes (S. Benayoune)"
-author: "[Prénom NOM]"
+author: "FEGHOUL Loris et GABOUTY Maxime"
 date: "Octobre 2026"
 lang: fr-FR
 toc: true

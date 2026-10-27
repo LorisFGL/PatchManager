@@ -3,3 +3,4 @@ logs/
 *.cred.xml
 GUIDE.md
 .DS_Store
+video/
