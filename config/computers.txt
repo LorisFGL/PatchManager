@@ -1,0 +1,4 @@
+﻿# Format : NOM;ADRESSE_IP  (les lignes vides et commençant par # sont ignorées)
+PC01;172.16.26.11
+PC02;172.16.26.12
+PC03;172.16.26.13
