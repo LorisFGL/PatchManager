@@ -4,6 +4,8 @@ Projet *Sécurité des systèmes* : audit centralisé des correctifs d'un parc W
 
 `computers.txt` → disponibilité (ping + WinRM) → inventaire → correctifs → conformité → rapport CSV/HTML + journal → notification → sécurisation (compte non admin + JEA).
 
+**Vidéo de démonstration :** https://youtu.be/YpbXMxrxyQs — **Rapport :** [rapport/Rapport_PatchManagement.pdf](rapport/Rapport_PatchManagement.pdf)
+
 ## Structure
 
 | Fichier | Rôle |

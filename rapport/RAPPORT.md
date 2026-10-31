@@ -4,7 +4,7 @@ subtitle: "Projet Patch Management Windows — Sécurité des systèmes"
 author:
   - "FEGHOUL Loris"
   - "GABOUTY Maxime"
-date: "Enseignant : Salim Benayoune — 31 octobre 2026 — Dépôt GitHub : https://github.com/LorisFGL/PatchManager"
+date: "Enseignant : Salim Benayoune — 31 octobre 2026 — Dépôt GitHub : https://github.com/LorisFGL/PatchManager — Vidéo : https://youtu.be/YpbXMxrxyQs"
 lang: fr-FR
 ---
 
@@ -50,7 +50,7 @@ L'hôte étant un Mac, il ne peut pas jouer le rôle de poste Windows : deux mac
 
 ## 2.2 Organisation du code
 
-Le code source complet, les fichiers de configuration, les captures et l'historique du projet sont disponibles sur le dépôt GitHub : **<https://github.com/LorisFGL/PatchManager>**.
+Le code source complet, les fichiers de configuration, les captures et l'historique du projet sont disponibles sur le dépôt GitHub : **<https://github.com/LorisFGL/PatchManager>**. La vidéo de démonstration commentée est disponible ici : **<https://youtu.be/YpbXMxrxyQs>**.
 
 | Fichier | Rôle | Partie |
 |---|---|---|
