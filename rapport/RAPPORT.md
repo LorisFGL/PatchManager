@@ -1,12 +1,24 @@
 ---
-title: "Projet : Système de gestion des mises à jour en PowerShell"
-subtitle: "Patch Management Windows — Sécurité des systèmes (S. Benayoune)"
-author: "FEGHOUL Loris et GABOUTY Maxime"
-date: "Octobre 2026"
+title: "Système de gestion des mises à jour en PowerShell"
+subtitle: "Projet Patch Management Windows — Sécurité des systèmes"
+author:
+  - "FEGHOUL Loris"
+  - "GABOUTY Maxime"
+date: "Enseignant : Salim Benayoune — 31 octobre 2026"
 lang: fr-FR
-toc: true
-toc-title: "Sommaire"
 ---
+
+```{=openxml}
+<w:p><w:r><w:br w:type="page"/></w:r></w:p>
+```
+```{=openxml}
+<w:p><w:pPr><w:pStyle w:val="TOCHeading"/></w:pPr><w:r><w:t>Sommaire</w:t></w:r></w:p>
+<w:p><w:r><w:fldChar w:fldCharType="begin" w:dirty="true"/></w:r><w:r><w:instrText xml:space="preserve"> TOC \o "1-2" \h \z \u </w:instrText></w:r><w:r><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:t>Ouvrir dans Word puis accepter la mise à jour des champs (ou clic droit → Mettre à jour les champs) pour afficher le sommaire.</w:t></w:r><w:r><w:fldChar w:fldCharType="end"/></w:r></w:p>
+```
+```{=openxml}
+<w:p><w:r><w:br w:type="page"/></w:r></w:p>
+```
+**Résumé.** Ce projet met en œuvre une solution centralisée d'audit des correctifs de sécurité d'un parc Windows en PowerShell. À partir d'un inventaire `computers.txt`, des scripts testent la disponibilité des postes, interrogent chaque machine à distance par PowerShell Remoting (WinRM), inventorient le système et les correctifs installés, comparent ces correctifs à une politique de KB obligatoires et classent chaque poste **CONFORME**, **NON CONFORME** ou **INACCESSIBLE**. Ils produisent des rapports CSV et HTML, un journal d'exécution et une notification à l'administrateur en cas d'anomalie. La solution a été durcie : compte de service non administrateur, point de terminaison **JEA**, pare-feu WinRM restreint au poste d'administration, droits NTFS limités et secrets chiffrés (DPAPI). Elle a été testée sur deux machines virtuelles Windows 11 et un poste inaccessible simulé : 3 postes, 1 conforme, 1 non conforme, 1 inaccessible, **taux de conformité de 50 %**.
 
 # 1. Introduction
 
@@ -34,18 +46,7 @@ Toutes les captures de ce rapport proviennent de l'exécution réelle de la solu
 
 L'hôte étant un Mac, il ne peut pas jouer le rôle de poste Windows : deux machines virtuelles Windows ont donc été utilisées, ce qui respecte l'exigence « au minimum deux postes Windows communicants ».
 
-```
-                 Réseau virtuel 172.16.26.0/24 (NAT VMware Fusion)
-   ┌──────────────────────────┐   WinRM HTTP 5985    ┌──────────────────────────┐
-   │ PC01  172.16.26.11       │ ───────────────────▶ │ PC02  172.16.26.12       │
-   │ Poste d'administration   │   (NTLM, chiffré)    │ Poste supervisé          │
-   │ C:\PatchManager          │ ◀─── (bloqué) ─────  │ JEA « PatchAudit »       │
-   │ + poste supervisé        │                      │ compte svc-patch         │
-   └──────────────────────────┘                      └──────────────────────────┘
-            │  ping / Test-WSMan
-            ▼
-   PC03  172.16.26.13  (aucune machine : poste « INACCESSIBLE »)
-```
+![Architecture de l'environnement de test](architecture.png){width=100%}
 
 ## 2.2 Organisation du code
 

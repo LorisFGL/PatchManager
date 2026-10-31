@@ -1,0 +1,31 @@
+@page { size: A4; margin: 18mm 16mm 20mm 16mm;
+  @bottom-center { content: "Patch Management PowerShell — FEGHOUL / GABOUTY — page " counter(page) " / " counter(pages); font: 8.5pt Arial, sans-serif; color: #666; } }
+@page :first { @bottom-center { content: none; } }
+html { font: 10.5pt/1.45 "Helvetica Neue", Arial, sans-serif; color: #1d2733; }
+body { margin: 0; max-width: none; }
+header#title-block-header { height: 245mm; overflow: hidden; text-align: center; break-after: page;
+  border: 3px solid #1f3a5f; border-radius: 6mm; padding: 75mm 15mm 0; box-sizing: border-box; background: #f3f7fc; }
+header .title { font-size: 26pt; color: #1f3a5f; margin: 0 0 6mm; }
+header .subtitle { font-size: 14pt; color: #3d5a80; margin: 0 0 18mm; }
+header .author { font-size: 15pt; font-weight: bold; margin: 2mm 0; }
+header .date { font-size: 11pt; color: #555; margin-top: 18mm; }
+nav#TOC { margin-bottom: 8mm; }
+nav#TOC::before { content: "Sommaire"; display: block; font-size: 18pt; font-weight: bold; color: #1f3a5f; margin-bottom: 4mm; }
+nav#TOC ul { list-style: none; padding-left: 0; } nav#TOC ul ul { padding-left: 6mm; font-size: 9.5pt; }
+nav#TOC a { color: #1d2733; text-decoration: none; } nav#TOC > ul > li { margin-top: 2mm; font-weight: bold; } nav#TOC ul ul li { font-weight: normal; }
+h1 { page-break-before: always; font-size: 17pt; color: #1f3a5f; border-bottom: 2px solid #1f3a5f; padding-bottom: 1.5mm; }
+h2 { font-size: 13pt; color: #2f5d8a; margin-top: 6mm; page-break-after: avoid; }
+p { text-align: justify; orphans: 3; widows: 3; }
+figure { margin: 3mm 0 5mm; page-break-inside: avoid; text-align: center; }
+figure img, p img { max-width: 100%; max-height: 120mm; border: 1px solid #c9d3df; }
+figcaption { font-size: 8.5pt; color: #555; font-style: italic; margin-top: 1mm; }
+table { border-collapse: collapse; width: 100%; font-size: 9pt; margin: 3mm 0; page-break-inside: avoid; }
+th { background: #1f3a5f; color: #fff; text-align: left; } th, td { border: 1px solid #c9d3df; padding: 1.5mm 2mm; vertical-align: top; }
+tr:nth-child(even) td { background: #f5f8fc; }
+code { font-family: Menlo, Consolas, monospace; font-size: 8.8pt; background: #eef2f7; padding: 0 1mm; border-radius: 1mm; }
+pre { background: #0f2238; color: #e8eef5; padding: 3mm; border-radius: 2mm; font-size: 8.5pt; white-space: pre-wrap; page-break-inside: avoid; }
+pre code { background: none; color: inherit; padding: 0; }
+blockquote { border-left: 4px solid #2f5d8a; margin: 3mm 0; padding: 1mm 4mm; background: #eef4fb; }
+
+header p { text-align: center !important; }
+pre, pre * { color: #e8eef5 !important; }
